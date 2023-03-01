@@ -1,0 +1,33 @@
+{
+  "name": "ordjs-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && tsc -p ./tsconfig.json && npm run formatjs",
+    "build:browser": "npm run build && browserify --standalone ordjs_utils ./src/index.js -o ./lib/ord-utils.js",
+    "clean": "rimraf src",
+    "formatjs": "npm run prettierjs -- --write",
+    "prettierjs": "prettier \"src/**/*.js\" --ignore-path ./.prettierignore",
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ordjs/ordjs-utils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ordjs/ordjs-utils/issues"
+  },
+  "homepage": "https://github.com/ordjs/ordjs-utils#readme",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.2",
+    "ts-jest": "^29.0.5"
+  },
+  "dependencies": {
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2"
+  }
+}
